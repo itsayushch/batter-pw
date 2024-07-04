@@ -3,7 +3,7 @@ import axios from 'axios';
 const handler = async (req, res) => {
     // check if user is logged in (i.e auth_token is present in localStorage)
     const loginData = JSON.parse(localStorage.getItem('login-data'));
-    const endpoint = "https://api.penpencil.xyz/v1/users/self";
+    const endpoint = "https://api.penpencil.co/v1/users/self";
 
     const config = {
         headers: {

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const handler = async (req, res) => {
     // console.log(req.body.batchID);
-    const endpoint = `https://api.penpencil.xyz/v3/batches/${req.body.batchID}/details`;
+    const endpoint = `https://api.penpencil.co/v3/batches/${req.body.batchID}/details`;
     const config = {
         headers: { authorization: `Bearer ${req.body.access_token}` }
     }

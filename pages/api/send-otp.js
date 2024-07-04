@@ -5,12 +5,16 @@ const handler = async (req, res) => {
     req.status(500);
   }
   const phone = req.body.number;
-  const endpoint = "https://api.penpencil.xyz/v1/users/get-otp?smsType=0";
+  console.log(phone);
+  const endpoint = "https://api.penpencil.co/v1/users/get-otp?smsType=0";
   const payload = {
     username: phone,
-    countryCode: "+91",
+    countryCode: '+91',
+    organizationId: '5eb393ee95fab7468a79d189'
+
   };
   const resp = await axios.post(endpoint, payload);
+  console.log(resp.data)
   res.status(resp.status).json(resp.data);
 };
 

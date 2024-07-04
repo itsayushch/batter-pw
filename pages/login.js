@@ -74,7 +74,7 @@ export default function Login() {
       number: phone.toString(),
     };
     const a = await axios.post(endpoint, payload);
-    if (a.status === 200 && a.data.success) {
+    if (a.data.success) {
       setSentOtp(true);
     } else {
       console.log("unable to send otp ", a.status, a.data);
@@ -91,7 +91,7 @@ export default function Login() {
         otp: otp.toString(),
       };
       const res = await axios.post(endpoint, payload);
-      if (res.status === 200 && res.data.success) {
+      if (res.data.success) {
         var data = {
           access_token: res.data.data.access_token,
           expires_in: res.data.data.expires_in,
